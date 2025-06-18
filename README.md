@@ -19,7 +19,7 @@ All repositories in this organization adhere to strict security standards to pro
   Secrets are never committed to the repository. Use GitHub Secrets, HashiCorp Vault, or other secure secret management tools.
 
 - **Automated Security Scanning:**  
-  Tools such as SonarQube, Checkmarx, BlackDuck, TruffleHog, and Prisma Cloud are used for automated code and dependency scanning.
+  For a detailed list of security tools used in this DevOps workflow, see_ [**Security-Tools**](security-tools.md).
 
 - **Dependency Management:**  
   Dependencies are kept up to date, and vulnerability checks are performed regularly.
@@ -32,7 +32,7 @@ All repositories in this organization adhere to strict security standards to pro
  ---
 ## Next Step
 
-For a detailed list of security tools used in this DevOps workflow, see_ [**Security-Tools**](security-tools.md).
+Branch protection is crucial. My branches were setup private initially and at this point I was ready to set up the [**branch rulesets**](branch-rulesets.md). 
 
 ---
 ## Reporting Vulnerabilities
