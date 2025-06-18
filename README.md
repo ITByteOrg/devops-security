@@ -1,3 +1,6 @@
+### ℹ️ Documentation Notice
+This repository is actively evolving. Some documentation is incomplete, and certain links or references may be out of date while improvements are in progress. The structure, content, and tooling may change frequently as this guide matures. Contributions are currently closed while refinement is underway.
+
 # Security Practices
 
 Security is a core pillar of this DevOps journey. This document outlines the security policies and practices followed across all repositories in the DevOps stack.
