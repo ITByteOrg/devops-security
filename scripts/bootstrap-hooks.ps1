@@ -13,7 +13,7 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = Resolve-Path "$PSScriptRoot\.."
 $GitHooksDir = "$RepoRoot\.git\hooks"
 $HookSourceDir = "$RepoRoot\scripts\githooks"
-$ExpectedFiles = @("TruffleHogShared.psm1", "post-checkout")
+$ExpectedFiles = @("TruffleHogShared.psm1", "post-checkout.psm1")
 
 # Import logger if needed
 # Import-Module "$PSScriptRoot\LoggingUtils.psm1" -ErrorAction SilentlyContinue
