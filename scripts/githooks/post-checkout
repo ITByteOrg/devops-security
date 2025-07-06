@@ -9,7 +9,7 @@ $ErrorActionPreference = "SilentlyContinue"
 # Relative paths
 $repoRoot = Resolve-Path "$PSScriptRoot\..\.."
 $hookDir = "$repoRoot\.git\hooks"
-$expected = @("pre-commit", "pre-push", "TruffleHogShared.psm1")
+$expected = @("post-checkout, "TruffleHogShared.psm1")
 $missing = @()
 
 foreach ($file in $expected) {

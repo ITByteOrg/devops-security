@@ -35,7 +35,4 @@ foreach ($file in $ExpectedFiles) {
     Write-Log "✅ Installed $file into .git/hooks/"
 }
 
-pre-commit install | Out-Null
-Write-Host "✅ Pre-commit hooks installed."
-
 Write-Log "Done."

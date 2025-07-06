@@ -1,0 +1,44 @@
+# Ignore system-generated files
+.DS_Store
+.trash/
+
+# Virtual environment
+venv/
+.venv/
+
+# Python cache files
+__pycache__/
+
+# Logs & Temporary files
+*.log
+*.cache
+
+# Environment variables / secrets
+.env
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Gunicorn socket & PID files (if used)
+gunicorn.sock
+gunicorn.pid
+
+# Obsidian files
+.obsidian/
+
+# Visual Studio Code files
+.vscode/
+*.code-workspace
+
+# Terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+*.tfplan*
+tfplan.binary
+terraform/
+terraform/scripts/logs/
+ 

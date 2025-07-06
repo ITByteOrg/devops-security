@@ -5,13 +5,9 @@ This repository is actively evolving. Some documentation is incomplete, and cert
 
 Security is a core pillar of this DevOps journey. This document outlines the security policies and practices followed across all repositories in the DevOps stack.
 
----
-
 ## Overview
 
 All repositories in this organization adhere to strict security standards to protect code, infrastructure, and sensitive information. These practices are reviewed and updated regularly as part of our DevOps workflow.
-
----
 
 ## Key Security Practices
 
@@ -30,22 +26,48 @@ All repositories in this organization adhere to strict security standards to pro
 - **Access Control:**  
   Repository access is limited to authorized contributors. Least privilege principles are enforced.
 
-- **Incident Response:**  
-  Security incidents are reported and handled promptly. See the [Contact](#contact) section below.
- ---
+ 
+## Security Workflow Design
+This repository intentionally separates application logic from security tooling to maintain modularity, autonomy, and scalability across projects.
+
+### Repository Boundaries
+- **devops-world**: Contains developer tooling, Git hooks, and workflow automation. Operates independently of external security modules.
+
+- **devops-security**: Centralizes static analysis, secret scanning, and compliance tooling (e.g., TruffleHog, Semgrep, OWASP tools). Enforcement is handled via CI pipelines that scan external repositories.
+
+### Secret Scanning with TruffleHog
+- TruffleHog logic and configurations reside in devops-security.
+
+- Local Git hooks in this repository may trigger scans, but do not import files from devops-security.
+
+- CI workflows managed by devops-security run scheduled or merge-triggered scans to ensure repository hygiene.
+
+For details on how TruffleHog operates across developer and CI layers, see [Secret Scanning Strategy](security-tools.md#secret-scanning-strategy-dev-time-vs-ci-time)
+
+
+### Design Rationale
+This architecture avoids tight coupling by:
+
+- Enabling independent versioning and maintenance across repositories
+
+- Promoting clean compliance workflows without embedding external dependencies
+
+- Supporting flexible scaling of security enforcement across multiple codebases
+ 
+
 ## Next Step
 
 Branch protection is crucial. My branches were setup private initially and at this point I was ready to set up the [**branch rulesets**](branch-rulesets.md). 
 
----
-## Reporting Vulnerabilities
+## License
+This project is licensed under **Creative Commons Attribution 4.0 International License (CC-BY-4.0).**  
+🔗 **Full license details:** [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 
-If you discover a security vulnerability, please report it responsibly by opening a private issue or contacting the repository maintainer directly.
+## Contributing
 
----
+While this project is publicly available under an open license, contributions are currently not being accepted.
 
-## Contact
+You're welcome to use, fork, or adapt the scripts for your infrastructure work. If you find them helpful, a star or mention is always appreciated.
 
-For security concerns or questions, reach out via [GitHub Issues](https://github.com/ITByteEnthusiast/devops-guide/issues) or contact the repository maintainer.
-
----
+## Maintainer
+Developed and maintained by ITByteEnthusiast.
