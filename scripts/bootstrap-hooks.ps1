@@ -10,29 +10,27 @@
 
 $ErrorActionPreference = "Stop"
 
-$RepoRoot = Resolve-Path "$PSScriptRoot\.."
-$GitHooksDir = "$RepoRoot\.git\hooks"
-$HookSourceDir = "$RepoRoot\scripts\githooks"
-$ExpectedFiles = @("TruffleHogShared.psm1", "post-checkout.psm1")
+$RepoRoot = Resolve-Path "$PSScriptRoot/.."
+$GitHooksDir = "$RepoRoot/.git/hooks"
+$HookSourceDir = "$RepoRoot/scripts/githooks"
+$ExpectedFiles = @("post-checkout.ps1")
 
-# Import logger if needed
-# Import-Module "$PSScriptRoot\LoggingUtils.psm1" -ErrorAction SilentlyContinue
+Import-Module "$PSScriptRoot/shared/LoggingUtils.psm1" -ErrorAction Stop
+Import-Module "$PSScriptRoot/shared/TruffleHogShared.psm1" -ErrorAction Stop
 
-function Write-Log($msg) { Write-Host "🔹 $msg" }
-
-Write-Log "Installing TruffleHog shared modules for testing..."
+Write-Log -Message "Installing TruffleHog shared modules for testing..." -Type "info"
 
 foreach ($file in $ExpectedFiles) {
     $src = Join-Path $HookSourceDir $file
     $dst = Join-Path $GitHooksDir $file
 
     if (-not (Test-Path $src)) {
-        Write-Log "❌ Missing $file in scripts/githooks/"
+        Write-Log -Message "Missing $file in scripts/githooks/" -Type "error"
         continue
     }
 
     Copy-Item $src $dst -Force
-    Write-Log "✅ Installed $file into .git/hooks/"
+    Write-Log -Message "Installed $file into .git/hooks/" -Type "info"
 }
 
-Write-Log "Done."
+Write-Log -Message "Done." -Type "info"
