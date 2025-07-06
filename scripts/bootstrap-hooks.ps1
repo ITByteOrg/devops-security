@@ -18,11 +18,6 @@ $GitHooksDir    = "$RepoRoot/.git/hooks"
 $HookSourceDir  = "$RepoRoot/scripts/githooks"
 $SharedDir      = "$RepoRoot/scripts/shared"
 
-Write-Host "[DEBUG] RepoRoot: $RepoRoot"
-Write-Host "[DEBUG] GitHooksDir: $GitHooksDir"
-Write-Host "[DEBUG] HookSourceDir: $HookSourceDir"
-Write-Host "[DEBUG] SharedDir: $SharedDir"
-
 # Import shared modules
 Import-Module "$PSScriptRoot/shared/LoggingUtils.psm1" -ErrorAction Stop
 Import-Module "$PSScriptRoot/shared/TruffleHogShared.psm1" -ErrorAction Stop
