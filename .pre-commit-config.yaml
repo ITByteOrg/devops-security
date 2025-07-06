@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/trufflesecurity/trufflehog
+    rev: v3.64.5  # or latest stable
+    hooks:
+      - id: trufflehog
+        name: TruffleHog Git Secret Scan
+        entry: trufflehog
+        args: [ "git", "file://.", "--fail", "--only-verified", "--exclude-path", ".trufflehogignore" ]
+        language: system
+        types: [file]
+        pass_filenames: false
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.8
+    hooks:
+      - id: bandit
+        args: [ "-r", "scripts/", "-ll" ]
+        language_version: python3
+
+  - repo: https://github.com/PowerShell/PSScriptAnalyzer
+    rev: v1.21.0
+    hooks:
+      - id: psscriptanalyzer
+        name: PowerShell Script Linting
+        entry: pwsh -c "Invoke-ScriptAnalyzer -Path scripts -Recurse"
+        language: system
+        files: \.ps1$|\.psm1$

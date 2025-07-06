@@ -1,0 +1,45 @@
+# Ignore Git internals and logs
+^\.git/
+^\.trufflehog-logs/
+
+# Ignore virtual environments and Python artifacts
+^\.?venv/
+^env/
+^\.env/
+^__pycache__/
+\.pyc$
+\.pyo$
+
+# Ignore editor config and IDE folders
+^\.vscode/
+\.editorconfig$
+\.prettierrc$
+\.eslintrc$
+\.gitignore$
+\.gitattributes$
+
+# Ignore CI/CD and automation config
+^\.github/
+^\.azure-pipelines/
+
+# Ignore documentation and markdown
+\.md$
+\.txt$
+\.rst$
+
+# Ignore node and build artifacts
+^node_modules/
+^dist/
+^build/
+^coverage/
+^logs?/
+
+# Ignore test fixtures and mock content
+^tests?/fixtures?/
+^__mocks__/
+^__snapshots__/
+
+# Ignore hook infrastructure and internal tooling
+^scripts/githooks/
+^scripts/bootstrap-hooks.ps1
+^scripts/.trufflehogignore.base
