@@ -18,7 +18,7 @@ All repositories in this organization adhere to strict security standards to pro
   Secrets are never committed to the repository. Use GitHub Secrets, HashiCorp Vault, or other secure secret management tools.
 
 - **Automated Security Scanning:**  
-  For a detailed list of security tools used in this DevOps workflow, see_ [**Security-Tools**](security-tools.md).
+  For a detailed list of security tools used in this DevOps workflow, see [**Security-Tools**](https://github.com/ITByteOrg/devops-guide/blob/main/security/security-tools.md)
 
 - **Dependency Management:**  
   Dependencies are kept up to date, and vulnerability checks are performed regularly.
@@ -42,7 +42,8 @@ This repository intentionally separates application logic from security tooling 
 
 - CI workflows managed by devops-security run scheduled or merge-triggered scans to ensure repository hygiene.
 
-For details on how TruffleHog operates across developer and CI layers, see [Secret Scanning Strategy](security-tools.md#secret-scanning-strategy-dev-time-vs-ci-time)
+For details on how TruffleHog operates across developer and CI layers, see [Secret Scanning Stragegy](https://github.com/ITByteOrg/devops-guide/blob/main/security/security-tools.md#secret-scanning-strategy-dev-time-vs-ci-time)
+
 
 
 ### Design Rationale
@@ -57,7 +58,7 @@ This architecture avoids tight coupling by:
 
 ## Next Step
 
-Branch protection is crucial. My branches were setup private initially and at this point I was ready to set up the [**branch rulesets**](branch-rulesets.md). 
+Branch protection is crucial. My branches were setup private initially and at this point I was ready to set up the [**branch rulesets**](https://github.com/ITByteOrg/devops-guide/blob/main/policies/branch-rulesets.md)
 
 ## License
 This project is licensed under **Creative Commons Attribution 4.0 International License (CC-BY-4.0).**  
